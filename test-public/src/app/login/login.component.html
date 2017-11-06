@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-md-4 col-md-offset-4" style="margin-left:450px;margin-top:210px;width:1000px;">
+                <div class="panel-heading"><br>
+                    <h3 class="panel-title" style="text-align: center">Mean Assignment</h3>
+                </div><br>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <input [(ngModel)]="email" class="form-control" placeholder="E-mail" name="email" type="email" autofocus required>
+                            </div>
+                            <div class="form-group">
+                                <input [(ngModel)]="password" class="form-control" placeholder="Password" name="password" type="password" autofocus required>
+                            </div>
+                            <button type="button" class="btn btn-success btn-block" (click)="login()">Login</button>
+                        </fieldset>
+                    </form>
+          </div>
+        </div>
+    </div>
+</div>

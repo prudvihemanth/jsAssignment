@@ -1,0 +1,45 @@
+<div>
+	<p class="btn btn-sucess" style="float:right;margin-top:-170px;margin-right:10px;color:black" role="button">
+		<b>Logout</b>
+	</p>
+	<div style="width:450px;margin-left:400px;margin-top:180px;">
+		<h2 style="text-align:center;margin-left: -45px;">
+			<u>Update Customer</u>
+		</h2>
+		<form style="margin:60px;margin-top:20px;margin-bottom:80px;">
+			<div class="form-group form-inline">
+				<label for="fname">First Name</label>
+				<input [(ngModel)]="fname" lass="form-control" [ngModelOptions]="{standalone: true}" placeholder="firstname" style="margin-left: 10px;width:190px;"
+				 name="fname" type="text" autofocus required>
+			</div>
+			<div class="form-group form-inline">
+				<label for="lname">Last Name</label>
+				<input [(ngModel)]="lname" class="form-control" [ngModelOptions]="{standalone: true}" placeholder="lastname" style="margin-left: 10px;"
+				 name="lname" type="text" autofocus required>
+			</div>
+			<div class="form-group form-inline">
+				<label>Gender</label>
+				<select [(ngModel)]="gender" class="form-control" [ngModelOptions]="{standalone: true}" id="gender" style="margin-left: 35px;">
+					<option>Male</option>
+					<option>Female</option>
+				</select>
+			</div>
+			<div class="form-group form-inline">
+				<label for="lifetime">Life Time</label>
+				<input [(ngModel)]="lifetime" class="form-control" [ngModelOptions]="{standalone: true}" placeholder="lifetime" style="margin-left: 23px;"
+				 name="lifetime" type="text" autofocus required>
+			</div>
+			<label for="DOB" style="margin-left:-300px;">DOB</label>
+			<div class="form-group form-inline" style="margin-left:93px;margin-top:-30px;width:190px;">
+
+				<my-date-picker name="mydate" [options]="myDatePickerOptions" [ngModelOptions]="{standalone: true}" [(ngModel)]="datepicker"
+				 required></my-date-picker>
+			</div>
+
+
+			<div class="form-group">
+				<button type="submit" (click)="update()" class="btn btn-primary" style="float:right;margin-right: 100px;">Update</button>
+			</div>
+		</form>
+	</div>
+</div>

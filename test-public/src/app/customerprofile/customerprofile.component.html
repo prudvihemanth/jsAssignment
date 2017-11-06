@@ -1,0 +1,38 @@
+<h2>
+  <u>CustomerList page</u>
+</h2>
+<div style="border: 2px solid black;width:800px;margin-left:300px;margin-top:50px;padding:10px;">
+  <form class="form-inline">
+    <div class="form-group" style="margin-left:10px;">
+      <label for="a">First Name </label>
+      <input [(ngModel)]="fname" type="text" class="form-control" id="a" [ngModelOptions]="{standalone: true}" placeholder="First Name" required>
+    </div>
+    <div class="form-group" style="margin-left:10px;">
+      <label for="b">Last Name </label>
+      <input [(ngModel)]="lname" type="text" class="form-control" id="b" [ngModelOptions]="{standalone: true}" placeholder="Last Name" required>
+    </div>
+    <div class="form-group" style="margin-left:15px;">
+      <label for="sel1">Gender</label>
+      <select [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" class="form-control" id="sel1">
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+  </form>
+  <form class="form-inline" style="margin-top:10px;">
+    <div class="form-group" style="margin-left:10px;">
+      <label for="c">Lifetime</label>
+      <input [(ngModel)]="lifetime" type="number" style="margin-left:20px;" [ngModelOptions]="{standalone: true}" class="form-control"
+        id="c" placeholder="Lifetime Value" required>
+    </div>
+    <label for="d" style="margin-left:10px;">Dob</label>
+    <div class="form-group col-md-3" style="margin-left:34px;">
+      <my-date-picker name="mydate" [options]="myDatePickerOptions" [ngModelOptions]="{standalone: true}" [(ngModel)]="model" required></my-date-picker>
+    </div><br>
+    <button class="btn btn-primary" style="margin-left: 32px; margin-bottom:10px; border-radius: 5px" (click)="addCustomer()">Add Customer</button>
+  </form>
+</div>
+<div style="margin-top: 100px;">
+  <ng2-smart-table [settings]="settings" 
+  [source]="source" (deleteConfirm)="onDeleteConfirm($event)" ></ng2-smart-table>
+</div>

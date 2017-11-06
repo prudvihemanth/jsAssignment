@@ -1,0 +1,11 @@
+
+  :host /deep/ table tr td, :host /deep/ table tr th {
+    border: 1px solid #e9ebec;
+  }
+  :host /deep/ ng2-smart-table tbody > tr > td{ 
+    font-size: 13px;
+  }
+  :host /deep/ ng2-smart-table thead > tr > th { 
+        font-size: 13px;
+ }
+  
