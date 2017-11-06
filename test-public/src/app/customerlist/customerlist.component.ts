@@ -33,7 +33,7 @@ export class CustomerlistComponent implements OnInit {
       alert('Firstname LastName Lifetime are mandatory Fields')
     }
     else {
-      this.http.post('http://localhost:8000/v1/Customer/updateCustomer', body).subscribe(data => {
+      this.http.post('http://54.154.48.248:8000/v1/Customer/updateCustomer', body).subscribe(data => {
         this.router.navigate(['customerProfile']);
         err => {
           alert('Something went wrong!');

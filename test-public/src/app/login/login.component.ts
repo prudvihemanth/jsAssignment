@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     let body = { email: this.email, password: this.password };
     if (!this.email || !this.password) { alert('Email & Password are mandatory') }
     else {
-      this.http.post('http://localhost:8000/v1/Customer/login', body).subscribe(data => {
+      this.http.post('http://54.154.48.248:8000/v1/Customer/login', body).subscribe(data => {
         this.router.navigate(['customerProfile']); err => {
           this.email = "";
           this.password = "";

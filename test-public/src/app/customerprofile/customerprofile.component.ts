@@ -85,7 +85,7 @@ export class CustomerprofileComponent implements OnInit {
   }
 
   getallCustomers() {
-    this.http.get('http://localhost:8000/v1/Customer/getAllCustomers', )
+    this.http.get('http://54.154.48.248:8000/v1/Customer/getAllCustomers', )
       .map(res => res.json())
       .subscribe(res => {
         this.data = [];
@@ -108,7 +108,7 @@ export class CustomerprofileComponent implements OnInit {
 
   onDeleteConfirm(event) {
     if (window.confirm('Are you sure you want to delete?')) {
-      this.http.get('http://localhost:8000/v1/Customer/deleteCustomer' + '/' + event.data.id).subscribe(data => {
+      this.http.get('http://54.154.48.248:8000/v1/Customer/deleteCustomer' + '/' + event.data.id).subscribe(data => {
         this.getallCustomers();
         err => {
           alert('Something went wrong!');
@@ -126,7 +126,7 @@ export class CustomerprofileComponent implements OnInit {
       alert('Firstname LastName Lifetime are mandatory Fields')
     }
     else {
-      this.http.post('http://localhost:8000/v1/Customer/createCustomer', body).subscribe(data => {
+      this.http.post('http://54.154.48.248:8000/v1/Customer/createCustomer', body).subscribe(data => {
         this.gender = 'Male';
         this.fname = '';
         this.lname = '';
