@@ -7,6 +7,7 @@
 const Promise = require('bluebird');
 Promise.promisifyAll(require('mongoose'));
 const CustomerModel = require('../models/customerModel');
+const logger = require('../utils/loggerConfig');
 
 
 /** Class representing a point. */
@@ -61,11 +62,11 @@ const customerController = class {
   static getallCustomers(req, reply) {
     CustomerModel.find({ isdeleted: false })
       .then((data) => {
-        console.log(data);
+        logger.info('getallCustomers db call is successful');
         reply(data);
       })
       .catch((err) => {
-        console.log(err);
+        logger.warn(err);
         reply('hello world');
       });
   }
@@ -80,11 +81,11 @@ const customerController = class {
   static deleteCustomer(req, reply) {
     CustomerModel.findOneAndUpdate({ id: req.params.id }, { $set: { isdeleted: true } }, { new: true })
       .then((data) => {
-        console.log(data);
+        logger.info('deletecustomer db call is successful');
         reply(data);
       })
       .catch((err) => {
-        console.log(err);
+        logger.warn(err);
         reply('hello world');
       });
   }
@@ -105,11 +106,11 @@ const customerController = class {
       },
     }, { new: true })
       .then((data) => {
-        console.log(data);
+        logger.info('updateprofile db call is successful');
         reply(data);
       })
       .catch((err) => {
-        console.log(err);
+        logger.warn(err);
         reply(err);
       });
   }
