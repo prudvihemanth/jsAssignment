@@ -3,7 +3,7 @@ Mean 5.0 Assignment
 
 Tech Stack:-
 
-Angular Js (5.0 with cli), Node Js (8.9.0), Mongodb (3.4)
+Angular Js (5.0 with cli), Node Js (8.9.0), Mongodb (3.4), Followed Eslint-Airbnb standards.
 
 Running the project:-
 
