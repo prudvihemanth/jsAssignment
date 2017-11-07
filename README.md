@@ -14,4 +14,6 @@ Running the project:-
 5. To start server go the server folder root and type npm start, server starts in watch mode on port 8000. (install nodemon 'npm i nodemon -g', if not installed)
 6. To start client go to the client folder root and type ng serve, go to url (http://localhost:4200) to access the project.
 
+For login Credentials, refer server-side code. :)
+
 -- Thanks
