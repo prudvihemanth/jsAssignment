@@ -5,7 +5,6 @@
  */
 
 const Joi = require('joi');
-const notes = require('../templates/swaggerNotes');
 const customerController = require('../controllers/customerController');
 
 const routes = [
@@ -14,7 +13,6 @@ const routes = [
     path: '/v1/Customer/login',
     config: {
       description: 'Api service for login into application.',
-      notes: notes.usersRegister,
       tags: ['api'],
       validate: {
         payload: {
@@ -33,7 +31,6 @@ const routes = [
     path: '/v1/Customer/createCustomer',
     config: {
       description: 'Api service to create a customer.',
-      notes: notes.usersRegister,
       tags: ['api'],
       validate: {
         payload: {
@@ -54,7 +51,6 @@ const routes = [
     path: '/v1/Customer/deleteCustomer/{id}',
     config: {
       description: 'Api service to delete a customer.',
-      notes: notes.usersRegister,
       tags: ['api'],
       validate: {
         params: {
@@ -99,4 +95,10 @@ const routes = [
     },
     handler: customerController.updateProfile,
   }];
+
+  /**
+ * Module representing the Api Endpoints.
+ * @module plugins
+ * @type {Array}
+ */
 module.exports = routes;

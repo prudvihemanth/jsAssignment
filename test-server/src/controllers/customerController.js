@@ -1,6 +1,6 @@
 /**
  * @file customerController.js
- * @description This is a class controller
+ * @description This is the controller containing CRUD operations of customer
  * @author Pruthvi Hemanth
  */
 
@@ -10,7 +10,6 @@ const CustomerModel = require('../models/customerModel');
 const logger = require('../utils/loggerConfig');
 
 
-/** Class representing a point. */
 const customerController = class {
   constructor() {
     this.name = 'prudhvi hemanth';
@@ -19,7 +18,8 @@ const customerController = class {
        * @static
        * @param {any} req
        * @param {any} reply
-       * @returns {string} returns hello world
+       * @description This function is intended to chcek user login details
+       * @returns {boolean} returns true or false based on the credentials provided
        */
   static login(req, reply) {
     const email = 'admin@webtrekk.com';
@@ -35,7 +35,8 @@ const customerController = class {
        * @static
        * @param {any} req
        * @param {any} reply
-       * @returns {string} returns hello world
+       * @description This function is intended to create a customer with few feilds
+       * @returns {boolean} returns true or false based on customer is saved successfully
        */
   static createCustomer(req, reply) {
     const customerObject = new CustomerModel({
@@ -56,6 +57,7 @@ const customerController = class {
        * @static
        * @param {any} req
        * @param {any} reply
+       * @description This function is intended to get the list of all customers
        * @returns {string} returns hello world
        */
 
@@ -76,6 +78,7 @@ const customerController = class {
        * @static
        * @param {any} req
        * @param {any} reply
+       * @description This function is intended to delete a customer, makes isdeleted field true based on the id field
        * @returns {string} returns hello world
        */
   static deleteCustomer(req, reply) {
@@ -95,6 +98,7 @@ const customerController = class {
        * @static
        * @param {any} req
        * @param {any} reply
+       * @description This function is intended to update the profile of customer
        * @returns {string} returns hello world
        */
 
@@ -117,7 +121,7 @@ const customerController = class {
 };
 
 /**
- * Module representing the plugins.
+ * Module representing the customerController.
  * @module plugins
  * @type {Class}
  */

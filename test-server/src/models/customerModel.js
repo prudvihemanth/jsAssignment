@@ -1,7 +1,12 @@
+/**
+ * @file Mongoosemodel.js
+ * @description This file defines schema with proposed fields
+ * @author Pruthvi Hemanth
+ */
+
 const Mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence');
-
-const Schema = Mongoose.Schema;
+const { Schema } = require('mongoose');
 
 
 const CustomerSchema = new Schema({
@@ -18,4 +23,10 @@ const CustomerSchema = new Schema({
 
 CustomerSchema.plugin(AutoIncrement, { inc_field: 'id' });
 const Customers = Mongoose.model('users', CustomerSchema);
+
+/**
+ * Module representing the Winston logger.
+ * @module Mongoose Model
+ * @type {Object}
+ */
 module.exports = Customers;

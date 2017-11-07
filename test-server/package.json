@@ -35,10 +35,10 @@
     "mongoose-sequence": "^3.2.0",
     "request": "^2.83.0",
     "vision": "^4.1.1",
-    "winston": "^2.4.0"
+    "winston": "^2.4.0",
+    "chai": "^4.1.2"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
     "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
