@@ -22,12 +22,13 @@ export class CustomerprofileComponent implements OnInit {
     this.source = new LocalDataSource(this.data);
   }
 
+//date picker configuration
   public myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'dd.mm.yyyy',
   };
 
-
-  settings = {
+// data table settings object
+  public settings = {
     actions: {
       add: false,
       edit: false,
@@ -84,6 +85,7 @@ export class CustomerprofileComponent implements OnInit {
     });
   }
 
+  // this function gets all customesrs list and output to datatable
   getallCustomers() {
     this.http.get('http://54.154.48.248:8000/v1/Customer/getAllCustomers', )
       .map(res => res.json())
@@ -106,6 +108,8 @@ export class CustomerprofileComponent implements OnInit {
     this.getallCustomers();
   }
 
+
+  // this function deletes already existing
   onDeleteConfirm(event) {
     if (window.confirm('Are you sure you want to delete?')) {
       this.http.get('http://54.154.48.248:8000/v1/Customer/deleteCustomer' + '/' + event.data.id).subscribe(data => {
@@ -119,11 +123,12 @@ export class CustomerprofileComponent implements OnInit {
     }
   }
 
+  // this function creates a new customer
   addCustomer() {
     const customerObject = {}
     let body = { firstName: this.fname, lastName: this.lname, lifetime: this.lifetime, gender: this.gender, dob: this.model.jsdate };
-    if (!this.fname || !this.lname || !this.lifetime) {
-      alert('Firstname LastName Lifetime are mandatory Fields')
+    if (!this.fname || !this.lname || !this.lifetime || !this.gender || !this.model.jsdate) {
+      alert('All Feilds are Mandatory')
     }
     else {
       this.http.post('http://54.154.48.248:8000/v1/Customer/createCustomer', body).subscribe(data => {

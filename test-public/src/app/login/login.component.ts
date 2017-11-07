@@ -18,18 +18,35 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+   // login function to enter the application
   login() {
     let body = { email: this.email, password: this.password };
     if (!this.email || !this.password) { alert('Email & Password are mandatory') }
     else {
-      this.http.post('http://54.154.48.248:8000/v1/Customer/login', body).subscribe(data => {
-        this.router.navigate(['customerProfile']); err => {
+      this.http.post('http://54.154.48.248:8000/v1/Customer/login', body)
+        .map(res => res.json())
+        .subscribe(
+        (resp) => {
+          console.log(resp+'--------');
+
+          if (resp) {
+            this.router.navigate(['customerProfile']);
+          }
+          else {
+            this.email = "";
+            this.password = "";
+            alert('Email/Password Entered Incorrectly!');
+          }
+        },
+        (err) => {
+          console.log(err);
           this.email = "";
           this.password = "";
-          alert('Something went wrong!');
+          alert('Email/Password Entered Incorrectly!');
         }
-      });
-    }
+        )
+    };
 
   }
 }

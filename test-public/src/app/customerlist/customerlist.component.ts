@@ -14,34 +14,34 @@ import { Router } from '@angular/router';
 export class CustomerlistComponent implements OnInit {
 
   constructor(private service: SharedserviceService, private router: Router, private http: Http) { }
+
+  // datepicker options
   public myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'dd.mm.yyyy',
   };
-  fname;
-  data;
-  lname;
-  gender;
-  dob;
-  lifetime;
-  id;
-  public datepicker;
 
+  public fname;
+  public data;
+  public  lname;
+  public  gender;
+  public  dob;
+  public  lifetime;
+  public id;
+  public datepicker;
+  
+  // update funtion to update customer profile
   update() {
     const customerObject = {}
     let body = { firstName: this.fname, lastName: this.lname, id: this.id.toString(), lifetime: this.lifetime, gender: this.gender, dob: this.datepicker.jsdate };
-    if (!this.fname || !this.lname || !this.lifetime) {
-      alert('Firstname LastName Lifetime are mandatory Fields')
-    }
-    else {
       this.http.post('http://54.154.48.248:8000/v1/Customer/updateCustomer', body).subscribe(data => {
         this.router.navigate(['customerProfile']);
         err => {
           alert('Something went wrong!');
         }
-      });
-    }
+     });
   }
 
+// component lifecycle hook
   ngOnInit() {
     if (this.service.data) {
       this.data = JSON.parse(this.service.data);

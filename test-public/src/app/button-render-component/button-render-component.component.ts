@@ -21,6 +21,7 @@ export class ButtonRenderComponentComponent implements ViewCell, OnInit {
   ngOnInit() {
   }
 
+  // enit row data to another component
   editdelete() {
     this.save.emit(this.rowData);
   }

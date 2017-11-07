@@ -7,6 +7,7 @@ export class SharedserviceService {
 
   constructor() { }
   
+  // this function shares data between two components 
   recievedata(obj){
     this.data = obj
   }

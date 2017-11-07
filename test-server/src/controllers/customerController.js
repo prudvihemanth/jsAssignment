@@ -22,8 +22,8 @@ const customerController = class {
        * @returns {boolean} returns true or false based on the credentials provided
        */
   static login(req, reply) {
-    const email = 'admin@webtrekk.com';
-    const password = 'jstest';
+    const email = 'jstest@webtrekk.com';
+    const password = 'AmmaNanna';
     if (req.payload.email === email && req.payload.password === password) {
       reply(true);
     } else {
